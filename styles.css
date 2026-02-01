@@ -1,0 +1,39 @@
+:root {
+  --accent: #6b2dff;
+  --bg: #6363d0;
+  --text: #111;
+}
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 24px;
+}
+header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+h1 {
+  margin: 0.1rem 0;
+  font-size: 1.6rem;
+}
+@media (max-width: 560px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
