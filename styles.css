@@ -1,6 +1,5 @@
 :root {
-  --accent: #6b2dff;
-  --bg: #6363d0;
+  --bg: #707444;
   --text: #111;
 }
 body {
@@ -16,6 +15,30 @@ body {
   background: var(--bg);
   margin: 0;
   padding: 0;
+}
+.hero {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  height: max(27vw, 24vh);
+}
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.hero-text {
+  position: absolute;
+  top: 57%;
+  left: 7%;
+  cursor: pointer;
+  color: #9dc6c6;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  font-size: min(7vw, 40px);
+  text-decoration: none;
 }
 .container {
   max-width: 900px;
