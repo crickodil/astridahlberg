@@ -1,7 +1,8 @@
 :root {
   --bg: #5a6236;
-  --bg-secondary: rgb(46, 52, 18);
-  --text: rgb(46, 52, 18);
+  --bg-secondary: rgb(14, 17, 4);
+  --bg-highlight: #858a5d;
+  --text: rgb(14, 17, 4);
   --text-highlight: #9dc6c6;
 }
 body {
@@ -47,14 +48,24 @@ body {
 }
 .hero-text {
   position: absolute;
-  bottom: 12px;
-  left: 24px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   color: var(--text-highlight);
-  text-shadow: 0 2px 5px rgba(46, 52, 18, 0.7);
+  color: var(--bg-highlight);
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.7), transparent);
   font-size: min(7vw, 55px);
   text-decoration: none;
   line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.hero-title {
+  padding-left: 24px;
+  padding-bottom: 12px;
 }
 .hero-subtitle {
   font-size: min(4vw, 30px);
@@ -88,7 +99,7 @@ body {
 .container {
   max-width: 1000px;
   margin: 0px auto;
-  background-color: #707444;
+  background-color: var(--bg-highlight);
 }
 .content {
   padding: 24px;
