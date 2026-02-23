@@ -1,9 +1,12 @@
 :root {
-  --bg: #707444;
-  --text: #111;
+  --bg: #5a6236;
+  --bg-secondary: rgb(46, 52, 18);
+  --text: rgb(46, 52, 18);
+  --text-highlight: #9dc6c6;
 }
 body {
   font-family:
+    Lexend,
     system-ui,
     -apple-system,
     Segoe UI,
@@ -16,46 +19,56 @@ body {
   margin: 0;
   padding: 0;
 }
+.flex {
+  display: flex;
+}
 .hero {
   position: relative;
   width: 100vw;
   overflow: hidden;
   height: max(27vw, 24vh);
+  display: flex;
+  justify-content: center;
+  max-height: min(30vw, 30vh);
+  min-height: 100px;
 }
-.hero-image {
+.hero-inner {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
   object-fit: cover;
   object-position: top center;
+  height: max(27vw, 24vh);
+  max-width: 1000px;
+  max-height: min(30vw, 30vh);
+  min-height: 100px;
+}
+.hero-image {
+  width: 100%;
 }
 .hero-text {
   position: absolute;
-  top: 57%;
-  left: 7%;
+  bottom: 12px;
+  left: 24px;
   cursor: pointer;
-  color: #9dc6c6;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-  font-size: min(7vw, 40px);
+  color: var(--text-highlight);
+  text-shadow: 0 2px 5px rgba(46, 52, 18, 0.7);
+  font-size: min(7vw, 55px);
   text-decoration: none;
 }
 .navbar {
-  background-color: #5a6236;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: solid 6px var(--bg-secondary);
 }
 .nav-menu {
   list-style: none;
   margin: 0;
-  padding: 0 24px;
+  padding: 0;
   max-width: 900px;
-  margin: 0 auto;
   display: flex;
 }
 .nav-menu a {
   display: block;
-  padding: 16px;
-  color: #9dc6c6;
+  padding: 12px 24px 12px 24px;
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
   transition:
@@ -63,22 +76,20 @@ body {
     background-color 0.3s ease;
 }
 .nav-menu a:hover {
-  color: #fff;
-  background-color: #2e3412;
+  color: var(--text-highlight);
+  background-color: var(--bg-secondary);
 }
 .container {
-  max-width: 900px;
-  margin: 36px auto;
+  max-width: 1000px;
+  margin: 0px auto;
+  background-color: #707444;
+}
+.content {
   padding: 24px;
 }
-header {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-h1 {
-  margin: 0.1rem 0;
-  font-size: 1.6rem;
+.portrait-image {
+  max-width: 300px;
+  padding-left: 30px;
 }
 @media (max-width: 560px) {
   header {
