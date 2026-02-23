@@ -54,6 +54,12 @@ body {
   text-shadow: 0 2px 5px rgba(46, 52, 18, 0.7);
   font-size: min(7vw, 55px);
   text-decoration: none;
+  line-height: 1;
+}
+.hero-subtitle {
+  font-size: min(4vw, 30px);
+  display: block;
+  margin-top: 12px;
 }
 .navbar {
   border-bottom: solid 6px var(--bg-secondary);
