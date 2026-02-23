@@ -21,6 +21,7 @@ body {
 }
 .flex {
   display: flex;
+  flex-wrap: wrap;
 }
 .hero {
   position: relative;
@@ -102,9 +103,14 @@ body {
 .content {
   padding: 24px;
 }
+.about-text {
+  flex: 2 1 350px;
+}
 .portrait-image {
   max-width: 300px;
   padding-left: 30px;
+  object-fit: contain;
+  align-self: start;
 }
 @media (max-width: 560px) {
   header {
