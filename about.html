@@ -69,10 +69,15 @@
             skrivna för vuxna från ca 15 år
           </p>
           <img
-            src="assets/portrait.jpg"
+            src="assets/portrait-800.jpg"
+            srcset="
+              assets/portrait-400.jpg   400w,
+              assets/portrait-800.jpg   800w,
+              assets/portrait-1600.jpg 1600w
+            "
+            sizes="(max-width: 400px) 400w, (max-width: 800px) 800w, 1600w"
             alt="Bild på Astrid Ahlberg"
             class="portrait-image"
-            loading="eager"
           />
         </div>
       </div>
