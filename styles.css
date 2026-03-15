@@ -184,6 +184,7 @@ body {
   }
   .nav-menu a {
     padding: 12px 16px;
+    width: calc(100% - 80px);
   }
   /* animate hamburger to X */
   #nav-toggle:checked + .nav-toggle .hamburger {
