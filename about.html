@@ -42,7 +42,16 @@
     </div>
     <main class="container" role="main">
       <nav class="navbar">
-        <ul class="nav-menu">
+        <input id="nav-toggle" type="checkbox" />
+        <label
+          for="nav-toggle"
+          class="nav-toggle"
+          aria-label="Meny"
+          aria-controls="nav-menu"
+        >
+          <span class="hamburger"></span>
+        </label>
+        <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html">Hem</a></li>
           <li><a href="books.html">Mina böcker</a></li>
           <li><a href="about.html">Om mig</a></li>

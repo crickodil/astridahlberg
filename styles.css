@@ -73,13 +73,59 @@ body {
 }
 .navbar {
   border-bottom: solid 6px var(--bg-secondary);
+  position: relative;
 }
+
+/* hidden checkbox that drives the toggle */
+#nav-toggle {
+  display: none;
+}
+
+/* label styled as hamburger button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+.nav-toggle .hamburger {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--text);
+  position: relative;
+}
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: var(--text);
+  left: 0;
+}
+.nav-toggle .hamburger::before {
+  top: -7px;
+}
+.nav-toggle .hamburger::after {
+  top: 7px;
+}
+
 .nav-menu {
   list-style: none;
   margin: 0;
   padding: 0;
   max-width: 900px;
   display: flex;
+  /* animated collapse for small-screen version */
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+  overflow: hidden;
 }
 .nav-menu a {
   display: block;
@@ -116,5 +162,44 @@ body {
   header {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* show toggle and collapse menu on very small screens */
+@media (max-width: 500px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+  }
+  /* when the hidden checkbox is checked, show the menu */
+  #nav-toggle:checked + .nav-toggle + .nav-menu {
+    display: flex;
+    max-height: 500px; /* large enough to show links */
+    opacity: 1;
+  }
+  .nav-menu a {
+    padding: 12px 16px;
+  }
+  /* animate hamburger to X */
+  #nav-toggle:checked + .nav-toggle .hamburger {
+    background-color: transparent;
+  }
+  #nav-toggle:checked + .nav-toggle .hamburger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #nav-toggle:checked + .nav-toggle .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  .nav-toggle .hamburger,
+  .nav-toggle .hamburger::before,
+  .nav-toggle .hamburger::after {
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;
   }
 }
